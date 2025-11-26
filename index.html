@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A welcoming space for everyone">
+        <title>My Space - Welcome</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background: linear-gradient(135deg, #87CEEB 0%, #E0F6FF 100%);
+                color: #333;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-align: center;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            main {
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 15px;
+                padding: 40px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                max-width: 600px;
+                animation: slideIn 0.6s ease-out;
+            }
+
+            h1 {
+                color: #8B4513;
+                font-size: 2.5em;
+                margin-bottom: 20px;
+                text-decoration: underline wavy #87CEEB;
+                text-decoration-thickness: 3px;
+                text-underline-offset: 8px;
+                letter-spacing: 2px;
+            }
+
+            p {
+                color: #555;
+                font-size: 1.3em;
+                line-height: 1.6;
+                margin: 15px 0;
+                font-weight: 500;
+            }
+
+            @keyframes slideIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @media (max-width: 600px) {
+                main {
+                    padding: 25px;
+                }
+
+                h1 {
+                    font-size: 1.8em;
+                }
+
+                p {
+                    font-size: 1.1em;
+                }
+            }
+        </style>
+    </head>
+    <body>
++        <main>
+            <h1>Hello Guys!</h1>
+            <p>Welcome to my space! 🎉</p>
+            <p>This is a place for creativity, connection, and endless possibilities.</p>
+        </main>
+    </body>
+</html>
