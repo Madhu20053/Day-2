@@ -1,0 +1,258 @@
+(<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Products — My Space</title>
+		<meta name="description" content="Browse example products — responsive, accessible product cards." />
+		<style>
+			:root{
+				--bg1: #f6fbff;
+				--accent: #87CEEB;
+				--card: #ffffff;
+				--muted: #6b7280;
+				--glass: rgba(255,255,255,0.6);
+				--radius: 14px;
+				--shadow: 0 8px 30px rgba(15,23,42,0.10);
+			}
+
+			*{box-sizing:border-box;margin:0;padding:0}
+			html,body{height:100%}
+			body{
+				font-family: 'Segoe UI', Roboto, system-ui, -apple-system, 'Helvetica Neue', Arial;
+				background: linear-gradient(135deg,var(--bg1),#E8F7FF 60%);
+				color:#111827;
+				-webkit-font-smoothing:antialiased;
+				padding:32px;
+				display:flex;
+				align-items:center;
+				justify-content:center;
+			}
+
+			.container{
+				width:100%;
+				max-width:1100px;
+			}
+
+			header{
+				display:flex;
+				align-items:center;
+				justify-content:space-between;
+				gap:18px;
+				margin-bottom:22px;
+			}
+
+			.site-title{display:flex;align-items:center;gap:12px}
+			.logo{
+				width:48px;height:48px;border-radius:10px;background:linear-gradient(45deg,var(--accent),#ffcc66);
+				display:grid;place-items:center;color:#fff;font-weight:700;font-size:18px
+			}
+
+			nav a{color:#064e3b;text-decoration:none;font-weight:600}
+
+			main{
+				background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.9));
+				padding:26px;border-radius:var(--radius);box-shadow:var(--shadow);
+			}
+
+			.hero{
+				display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px;
+				flex-wrap:wrap
+			}
+
+			.hero h1{font-size:26px;letter-spacing:0.6px}
+			.hero p{color:var(--muted);font-size:14px}
+
+			.controls{display:flex;gap:12px;align-items:center}
+			.btn{background:var(--accent);color:white;border:none;padding:8px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+			.btn.ghost{background:transparent;border:1px solid rgba(6,78,59,0.1);color:var(--muted)}
+
+			.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+
+			.card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(5,10,30,0.06);display:flex;flex-direction:column;gap:12px;transition:transform .18s ease, box-shadow .18s ease}
+			.card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(5,10,30,0.12)}
+
+			.media{height:160px;border-radius:10px;background:linear-gradient(135deg,#eef6fb,#fff);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+			.title{font-weight:700;color:#0f172a}
+			.price{color:#0f5132;font-weight:800}
+
+			.meta{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:13px}
+			.badges{display:flex;gap:8px}
+
+			.tag{background:var(--glass);padding:6px 10px;border-radius:999px;font-weight:700;color:#0f172a;font-size:12px}
+
+			footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+			@media (max-width:900px){
+				.grid{grid-template-columns:repeat(2,1fr)}
+				.media{height:140px}
+			}
+			@media (max-width:560px){
+				.grid{grid-template-columns:1fr}
+				header{flex-direction:column;align-items:flex-start}
+				.hero{flex-direction:column;align-items:flex-start}
+				.media{height:180px}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="site-title">
+					<div class="logo">MS</div>
+					<div>
+						<div style="font-weight:700">My Space</div>
+						<div style="font-size:12px;color:var(--muted)">Handpicked examples</div>
+					</div>
+				</div>
+				<nav aria-label="Primary navigation">
+					<a href="index.html">Home</a>
+					<a href="product.html" style="margin-left:12px">Products</a>
+					<a href="contact.html" style="margin-left:12px">Contact</a>
+				</nav>
+			</header>
+
+			<main>
+				<section class="hero" aria-labelledby="products-heading">
+					<div>
+						<h1 id="products-heading">Featured Products</h1>
+						<p>Explore a small curated collection — responsive, accessible, and ready to copy into your projects.</p>
+					</div>
+
+					<div class="controls" role="region" aria-label="Product controls">
+						<button class="btn" id="shuffle">Shuffle</button>
+						<button class="btn ghost" id="reset">Reset</button>
+					</div>
+				</section>
+
+				<section>
+					<div class="grid" id="product-grid">
+						<!-- Card 1 -->
+						<article class="card" tabindex="0" aria-labelledby="p1-title" aria-describedby="p1-desc">
+							<div class="media" aria-hidden="false">
+								<img src="assets/product1.svg" alt="Comfort chair" style="width:100%;height:100%;object-fit:cover;border-radius:8px" />
+							</div>
+							<div>
+								<div class="title" id="p1-title">Comfort Chair</div>
+								<div class="meta">
+									<div id="p1-desc">Ergonomic fabric chair for home office.</div>
+									<div class="price">$129</div>
+								</div>
+								<div class="badges" style="margin-top:8px">
+									<span class="tag">New</span>
+									<span class="tag">Eco</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- Card 2 -->
+						<article class="card" tabindex="0" aria-labelledby="p2-title" aria-describedby="p2-desc">
+							<div class="media" aria-hidden="false">
+								<img src="assets/product2.svg" alt="Aurora lamp" style="width:100%;height:100%;object-fit:cover;border-radius:8px" />
+							</div>
+							<div>
+								<div class="title" id="p2-title">Aurora Lamp</div>
+								<div class="meta">
+									<div id="p2-desc">Soft ambient lamp with color modes.</div>
+									<div class="price">$59</div>
+								</div>
+								<div class="badges" style="margin-top:8px">
+									<span class="tag">Popular</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- Card 3 -->
+						<article class="card" tabindex="0" aria-labelledby="p3-title" aria-describedby="p3-desc">
+							<div class="media" aria-hidden="false">
+								<img src="assets/product3.svg" alt="Minimal desk" style="width:100%;height:100%;object-fit:cover;border-radius:8px" />
+							</div>
+							<div>
+								<div class="title" id="p3-title">Minimal Desk</div>
+								<div class="meta">
+									<div id="p3-desc">Compact solid-wood desk with cable channel.</div>
+									<div class="price">$219</div>
+								</div>
+								<div class="badges" style="margin-top:8px">
+									<span class="tag">Limited</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- Card 4 -->
+						<article class="card" tabindex="0" aria-labelledby="p4-title" aria-describedby="p4-desc">
+							<div class="media" aria-hidden="false">
+								<img src="assets/product4.svg" alt="Noise-cancelling headphones" style="width:100%;height:100%;object-fit:cover;border-radius:8px" />
+							</div>
+							<div>
+								<div class="title" id="p4-title">Noise-cancelling Headphones</div>
+								<div class="meta">
+									<div id="p4-desc">Comfortable over-ear headset with long battery.</div>
+									<div class="price">$189</div>
+								</div>
+								<div class="badges" style="margin-top:8px">
+									<span class="tag">Gift</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- Card 5 -->
+						<article class="card" tabindex="0" aria-labelledby="p5-title" aria-describedby="p5-desc">
+							<div class="media" aria-hidden="false">
+								<img src="assets/product5.svg" alt="Plant pot set" style="width:100%;height:100%;object-fit:cover;border-radius:8px" />
+							</div>
+							<div>
+								<div class="title" id="p5-title">Plant Pot Set</div>
+								<div class="meta">
+									<div id="p5-desc">Stackable pots — perfect for succulents.</div>
+									<div class="price">$29</div>
+								</div>
+								<div class="badges" style="margin-top:8px">
+									<span class="tag">Trending</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- Card 6 -->
+						<article class="card" tabindex="0" aria-labelledby="p6-title" aria-describedby="p6-desc">
+							<div class="media" aria-hidden="false">
+								<img src="assets/product6.svg" alt="Cable organizer" style="width:100%;height:100%;object-fit:cover;border-radius:8px" />
+							</div>
+							<div>
+								<div class="title" id="p6-title">Cable Organizer</div>
+								<div class="meta">
+									<div id="p6-desc">Magnetic cable clips and minimalist tray.</div>
+									<div class="price">$14</div>
+								</div>
+								<div class="badges" style="margin-top:8px">
+									<span class="tag">Deal</span>
+								</div>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<footer>
+					Built with ❤️ — <a href="index.html">Back to home</a>
+				</footer>
+			</main>
+		</div>
+
+		<script>
+			// Small interactive helpers — shuffle / reset grid order
+			(function(){
+				const grid = document.getElementById('product-grid');
+				const initial = Array.from(grid.children);
+				document.getElementById('shuffle').addEventListener('click', ()=>{
+					const shuffled = Array.from(initial).sort(()=>Math.random()-0.5);
+					grid.innerHTML = '';
+					shuffled.forEach(n => grid.appendChild(n));
+				});
+				document.getElementById('reset').addEventListener('click', ()=>{
+					grid.innerHTML = '';
+					initial.forEach(n => grid.appendChild(n));
+				});
+			})();
+		</script>
+	</body>
+</html>)

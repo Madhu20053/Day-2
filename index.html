@@ -78,10 +78,34 @@
         </style>
     </head>
     <body>
-+        <main>
+        <header style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;max-width:700px;margin-left:auto;margin-right:auto">
+            <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(45deg,#06b6d4,#7dd3fc);display:grid;place-items:center;color:#fff;font-weight:800">MS</div>
+                <div style="text-align:left">
+                    <div style="font-weight:800">My Space</div>
+                    <div style="font-size:12px;color:#6b7280">Welcome</div>
+                </div>
+            </div>
+
+            <nav aria-label="Primary navigation">
+                <a href="index.html" style="text-decoration:none;color:#06383d;font-weight:700;margin-right:14px">Home</a>
+                <a href="product.html" style="text-decoration:none;color:#06383d;font-weight:700;margin-right:14px">Products</a>
+                <a href="contact.html" style="text-decoration:none;color:#06383d;font-weight:700">Contact</a>
+            </nav>
+        </header>
+
+        <main>
             <h1>Hello Guys!</h1>
             <p>Welcome to This space! 🎉</p>
             <p>This is a place for creativity, connection, and endless possibilities.</p>
+
+            <!-- CTA -> products -->
+            <div style="margin-top:22px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap">
+                <a href="product.html" class="btn" style="background:linear-gradient(90deg,#06b6d4,#7dd3fc);padding:10px 18px;border-radius:12px;color:#052e2f;font-weight:800;text-decoration:none;box-shadow:0 8px 20px rgba(6,38,45,0.08)">
+                    Browse Products
+                </a>
+                <a href="product.html" aria-label="Browse products" class="btn ghost" style="padding:10px 18px;border-radius:12px;color:#555;text-decoration:none;border:1px solid rgba(6,78,59,0.08);background:transparent;">View gallery</a>
+            </div>
         </main>
     </body>
 </html>
